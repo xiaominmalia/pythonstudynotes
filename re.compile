@@ -1,0 +1,21 @@
+re.compile 参数
+re.compile(pattern, flags=0)
+
+预定义字符集（可以卸载字符集[...]中）
+
+\d  数字：[0-9] a\dc  a1c
+\D  非数字：[^\d]  a\Dc  abc
+\s  空白字符：[<空格>\t\r\n\f\v]  a\sc   a c
+\S  非空白字符：[^\s]   a\Sc   abc
+\w  单词字符：[A-Za-z0-9_]    a\wc    abc
+\W  非单词字符：[6\w]   a\Wc    a c
+
+数量词（用在字符或（...）之后）
+*    匹配前一个字符0或无限次   abc*      ab   abccccc
++    匹配前一个字符1次或无限次    abc+    abc   abcccccc
+?    匹配前一个字符0次或1次    abc?      ab    abc
+{m}  匹配前一个字符m次      ab{2}c   abbc
+{m,n}  匹配前一个字符m至nc次      ab{1,2}c    abc abbc  [m和n可以省略：若省略m,则匹配0至n次；若省略n,则匹配m至无限次]
+*？+？？？{m,n}   使*+?{m,n}变成非贪婪模式
+
+
